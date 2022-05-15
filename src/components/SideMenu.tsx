@@ -11,6 +11,7 @@ import {
 } from "styles/typography/GeneralTextStyle";
 import { Cours } from "types/shangriLa";
 import CoursUtil from "utils/cours/CoursUtil";
+import ColorUtil from "utils/debugger/color/ColorUtil";
 import ShangriLaUtil from "utils/lib/ShangriLa/ShangriLaUtil";
 
 const SideMenuContainer = styled.div`
@@ -33,6 +34,10 @@ const CoursLink = styled(GeneralText)`
   cursor: pointer;
   display: block;
   width: 100%;
+
+  &:hover {
+    background: ${ColorUtil.addOpacity(GeneralColorStyle.Main.Dark, 0.6)};
+  }
 `;
 
 const YearLine = () => {
