@@ -31,9 +31,7 @@ const HeadClient = ({
         property="og:image"
         content="https://user-images.githubusercontent.com/47688057/111874106-fcaaf100-89d6-11eb-9730-9346bb3fe755.jpg"
       /> */}
-      <meta property="og:site_name" content="OurTube" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@our_tube" />
+      <meta property="og:site_name" content="anime-twitter" />
       <meta name="twitter:description" content={description} />
       <link rel="canonical" href={url} />
     </Head>
