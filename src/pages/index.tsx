@@ -40,6 +40,7 @@ const Home: NextPage = () => {
 
   const fetchAnimes = async (year: string, cours: string) => {
     LoggerUtil.debug(year, cours);
+    setAnimes([]);
     const animesJson = await ShangriLaUtil.fetchYearAndCours(year, cours);
     setAnimes(animesJson);
     setYear(year);
