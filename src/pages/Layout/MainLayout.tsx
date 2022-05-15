@@ -13,6 +13,8 @@ type LayoutProps = Required<{
   readonly children: ReactElement;
 }>;
 
-export const MainLayout = ({ children }: LayoutProps) => (
+const MainLayout = ({ children }: LayoutProps) => (
   <MainLayoutContainer>{children}</MainLayoutContainer>
 );
+
+export default MainLayout;
