@@ -3,7 +3,7 @@ import LoggerUtil from "utils/debugger/LoggerUtil";
 import GroupByUtil from "utils/groupBy/GroupByUtil";
 
 class ShangriLaUtil {
-  static apiUrl = "http://api.moemoe.tokyo/anime/v1/master";
+  static apiUrl = "https://api.moemoe.tokyo/anime/v1/master";
 
   public static async fetchCours() {
     const res = await fetch(`${ShangriLaUtil.apiUrl}/cours`);
