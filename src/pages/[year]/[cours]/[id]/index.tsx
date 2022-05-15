@@ -20,6 +20,7 @@ import Image from "next/image";
 import HeadClient from "components/Head";
 import { NextPage } from "next";
 import { Img } from "react-image";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const AnimeDetailContainer = styled.div``;
 
@@ -63,6 +64,12 @@ const NoImage = styled.div`
   gap: 8px 0;
 `;
 
+const CustomSkeleton = styled(Skeleton)`
+  width: 100%;
+  height: 70vh;
+  border-radius: 0;
+`;
+
 const AnimeDetail: NextPage = () => {
   const router = useRouter();
   const { year, cours, id } = router.query;
@@ -76,7 +83,6 @@ const AnimeDetail: NextPage = () => {
   const [productCompanies, setProductCompanies] = useState("");
 
   const [isData, setIsData] = useState(true);
-  const [isErrorImage, setIsErrorImage] = useState(false);
 
   useEffect(() => {
     if (!year || !cours || !id) return;
@@ -117,6 +123,11 @@ const AnimeDetail: NextPage = () => {
 
       <AnimeImage
         src={image}
+        loader={
+          <SkeletonTheme baseColor="#202020" highlightColor="#242424">
+            <CustomSkeleton />
+          </SkeletonTheme>
+        }
         unloader={
           <NoImage>
             <Image

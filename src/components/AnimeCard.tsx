@@ -38,6 +38,7 @@ const NoImage = styled.div`
 const CustomSkeleton = styled(Skeleton)`
   width: 267px;
   height: 140.17px;
+  border-radius: 4px;
 `;
 
 type AnimeCardProps = {
