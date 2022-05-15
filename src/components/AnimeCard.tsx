@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { FCX, useEffect, useState } from "react";
@@ -9,6 +8,8 @@ import {
   GeneralText,
 } from "styles/typography/GeneralTextStyle";
 import ColorUtil from "utils/debugger/color/ColorUtil";
+import { Img } from "react-image";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const AnimeCardContainer = styled.div`
   width: 267px;
@@ -16,7 +17,7 @@ const AnimeCardContainer = styled.div`
   cursor: pointer;
 `;
 
-const AnimeCardImage = styled.img`
+const AnimeCardImage = styled(Img)`
   width: 100%;
   border-radius: 4px;
 `;
@@ -32,6 +33,11 @@ const NoImage = styled.div`
   justify-content: center;
   align-items: center;
   gap: 8px 0;
+`;
+
+const CustomSkeleton = styled(Skeleton)`
+  width: 267px;
+  height: 140.17px;
 `;
 
 type AnimeCardProps = {
@@ -50,31 +56,31 @@ const AnimeCard: FCX<AnimeCardProps> = ({
   year,
   cours,
 }) => {
-  const [isErrorImage, setIsErrorImage] = useState(false);
-
   return (
     <Link href={`/${year}/${cours}/${animeId}`}>
       <AnimeCardContainer className={className}>
-        {src && !isErrorImage && (
-          <AnimeCardImage
-            src={src}
-            alt={title}
-            onError={(e) => setIsErrorImage(true)}
-          />
-        )}
-        {(!src || isErrorImage) && (
-          <NoImage>
-            <Image
-              src="/20200502_noimage.svg"
-              width={170 * 0.4}
-              height={159.4 * 0.4}
-              alt="no image"
-            />
-            <GeneralText fontSize={GeneralFontSize.SIZE_12}>
-              {title}
-            </GeneralText>
-          </NoImage>
-        )}
+        <AnimeCardImage
+          src={src}
+          loader={
+            <SkeletonTheme baseColor="#202020" highlightColor="#242424">
+              <CustomSkeleton />
+            </SkeletonTheme>
+          }
+          unloader={
+            <NoImage>
+              <Image
+                src="/20200502_noimage.svg"
+                width={170 * 0.4}
+                height={159.4 * 0.4}
+                alt="no image"
+              />
+              <GeneralText fontSize={GeneralFontSize.SIZE_12}>
+                {title}
+              </GeneralText>
+            </NoImage>
+          }
+          alt={title}
+        />
       </AnimeCardContainer>
     </Link>
   );

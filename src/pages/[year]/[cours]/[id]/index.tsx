@@ -19,10 +19,11 @@ import ColorUtil from "utils/debugger/color/ColorUtil";
 import Image from "next/image";
 import HeadClient from "components/Head";
 import { NextPage } from "next";
+import { Img } from "react-image";
 
 const AnimeDetailContainer = styled.div``;
 
-const AnimeImage = styled.img`
+const AnimeImage = styled(Img)`
   width: 100vw;
   display: block;
 `;
@@ -78,7 +79,7 @@ const AnimeDetail: NextPage = () => {
   const [isErrorImage, setIsErrorImage] = useState(false);
 
   useEffect(() => {
-    if (!year || !cours) return;
+    if (!year || !cours || !id) return;
 
     const fetchAnime = async (year: string, cours: string) => {
       const animes = await ShangriLaUtil.fetchYearAndCours(year, cours);
@@ -102,7 +103,7 @@ const AnimeDetail: NextPage = () => {
     };
 
     fetchAnime(String(year), String(cours));
-  }, [year, cours]);
+  }, [year, cours, id]);
 
   return (
     <AnimeDetailContainer>
@@ -114,24 +115,20 @@ const AnimeDetail: NextPage = () => {
         top={false}
       />
 
-      {image && !isErrorImage && (
-        <AnimeImage
-          src={image}
-          alt={title}
-          onError={(e) => setIsErrorImage(true)}
-        />
-      )}
-
-      {(!image || isErrorImage) && (
-        <NoImage>
-          <Image
-            src="/20200502_noimage.svg"
-            width={170 * 0.8}
-            height={159.4 * 0.8}
-            alt="no image"
-          />
-        </NoImage>
-      )}
+      <AnimeImage
+        src={image}
+        unloader={
+          <NoImage>
+            <Image
+              src="/20200502_noimage.svg"
+              width={170 * 0.8}
+              height={159.4 * 0.8}
+              alt="no image"
+            />
+          </NoImage>
+        }
+        alt={title}
+      />
 
       <AnimeDataContainer>
         <ButtonContainer>
