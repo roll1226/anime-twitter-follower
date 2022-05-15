@@ -1,0 +1,15 @@
+make --dry-run --always-make --keep-going --print-directory
+objc[1326]: Class AppleTypeCRetimerRestoreInfoHelper is implemented in both /usr/lib/libauthinstall.dylib (0x20cc0deb0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1068cc4f8). One of the two will be used. Which one is undefined.
+
+objc[1326]: Class AppleTypeCRetimerFirmwareAggregateRequestCreator is implemented in both /usr/lib/libauthinstall.dylib (0x20cc0df00) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1068cc548). One of the two will be used. Which one is undefined.
+objc[1326]: Class AppleTypeCRetimerFirmwareRequestCreator is implemented in both /usr/lib/libauthinstall.dylib (0x20cc0df50) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1068cc598). One of the two will be used. Which one is undefined.
+objc[1326]: Class ATCRTRestoreInfoFTABFile is implemented in both /usr/lib/libauthinstall.dylib (0x20cc0dfa0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1068cc5e8). One of the two will be used. Which one is undefined.
+
+objc[1326]: Class AppleTypeCRetimerFirmwareCopier is implemented in both /usr/lib/libauthinstall.dylib (0x20cc0dff0) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1068cc638). One of the two will be used. Which one is undefined.
+
+objc[1326]: Class ATCRTRestoreInfoFTABSubfile is implemented in both /usr/lib/libauthinstall.dylib (0x20cc0e040) and /Library/Apple/System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice (0x1068cc688). One of the two will be used. Which one is undefined.
+
+make: Entering directory `/Users/roll1226/personalDevelopment/ani-foll'
+yarn dev
+make: Leaving directory `/Users/roll1226/personalDevelopment/ani-foll'
+ 
