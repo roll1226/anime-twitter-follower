@@ -1,11 +1,10 @@
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faHouseChimney } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LineChart from "components/LineChart";
 import CircleButton from "components/CircleButton";
 import Label from "components/Label";
 import { useRouter } from "next/router";
-import React, { FCX, useEffect, useState } from "react";
+import React, { FC, FCX, useEffect, useState } from "react";
 import styled from "styled-components";
 import GeneralColorStyle from "styles/colors/GeneralColorStyle";
 import { Spacer } from "styles/spacer/GeneralSpacerStyle";
@@ -19,6 +18,7 @@ import ShangriLaUtil from "utils/lib/ShangriLa/ShangriLaUtil";
 import ColorUtil from "utils/debugger/color/ColorUtil";
 import Image from "next/image";
 import HeadClient from "components/Head";
+import { NextPage } from "next";
 
 const AnimeDetailContainer = styled.div``;
 
@@ -62,7 +62,7 @@ const NoImage = styled.div`
   gap: 8px 0;
 `;
 
-const animeDetail: FCX = () => {
+const AnimeDetail: NextPage = () => {
   const router = useRouter();
   const { year, cours, id } = router.query;
   const [image, setImage] = useState("");
@@ -195,4 +195,4 @@ const animeDetail: FCX = () => {
   );
 };
 
-export default animeDetail;
+export default AnimeDetail;

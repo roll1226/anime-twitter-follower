@@ -29,7 +29,7 @@ type CircleButton = {
 const CircleButton: FCX<CircleButton> = ({ className, href, icon }) => {
   return (
     <p className={className}>
-      <a href={href} target="_blank">
+      <a href={href} target="_blank" rel="noreferrer">
         <CircleButtonContainer>
           <FontAwesomeIcon icon={icon} width={42} />
         </CircleButtonContainer>
