@@ -121,25 +121,27 @@ const AnimeDetail: NextPage = () => {
         top={false}
       />
 
-      <AnimeImage
-        src={image}
-        loader={
-          <SkeletonTheme baseColor="#202020" highlightColor="#242424">
-            <CustomSkeleton />
-          </SkeletonTheme>
-        }
-        unloader={
-          <NoImage>
-            <Image
-              src="/20200502_noimage.svg"
-              width={170 * 0.8}
-              height={159.4 * 0.8}
-              alt="no image"
-            />
-          </NoImage>
-        }
-        alt={title}
-      />
+      <div>
+        <AnimeImage
+          src={image}
+          loader={
+            <SkeletonTheme baseColor="#202020" highlightColor="#242424">
+              <CustomSkeleton />
+            </SkeletonTheme>
+          }
+          unloader={
+            <NoImage>
+              <Image
+                src="/20200502_noimage.svg"
+                width={170 * 0.8}
+                height={159.4 * 0.8}
+                alt="no image"
+              />
+            </NoImage>
+          }
+          alt={title}
+        />
+      </div>
 
       <AnimeDataContainer>
         <ButtonContainer>
