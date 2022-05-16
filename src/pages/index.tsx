@@ -57,7 +57,7 @@ const Home: NextPage = () => {
         top={false}
       />
 
-      <SideMenu onCoursClick={fetchAnimes} />
+      <SideMenu onCoursClick={fetchAnimes} nowYear={new Date().getFullYear()} />
 
       <div>
         <div>
